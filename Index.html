@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso Cantinho</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #f5d0f5, #e5ccf5);
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        h1 {
+            color: #7d3cb5;
+            margin-bottom: 10px;
+            font-size: 36px;
+        }
+        p {
+            font-size: 18px;
+            color: #333;
+            margin: 10px 20px;
+        }
+        #contador {
+            font-size: 24px;
+            margin: 20px 0;
+            color: #7d3cb5;
+        }
+        .carrossel {
+            position: relative;
+            max-width: 90%;
+            margin: 30px auto;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 0 20px #c084fc;
+        }
+        .slides {
+            display: flex;
+            transition: transform 1s ease-in-out;
+        }
+        .slides img {
+            width: 100%;
+            border-radius: 20px;
+            animation: zoom 6s infinite alternate;
+        }
+        @keyframes zoom {
+            from { transform: scale(1); }
+            to { transform: scale(1.05); }
+        }
+        .audio {
+            margin: 20px 0;
+        }
+        .carta {
+            background: #fff0f8;
+            padding: 25px;
+            border-radius: 20px;
+            margin: 30px auto;
+            max-width: 700px;
+            color: #7d3cb5;
+            font-size: 19px;
+            line-height: 1.6;
+            box-shadow: 0 0 15px #f9c2d8;
+        }
+        .decoracao {
+            font-size: 40px;
+            animation: flutuar 4s infinite;
+        }
+        @keyframes flutuar {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .coraçoes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .coraçoes span {
+            position: absolute;
+            color: #ff4d94;
+            font-size: 24px;
+            animation: cair 6s linear infinite;
+        }
+        @keyframes cair {
+            0% {
+                top: -10%;
+                left: calc(100% * var(--x));
+                opacity: 1;
+            }
+            100% {
+                top: 110%;
+                left: calc(100% * var(--x));
+                opacity: 0;
+            }
+        }
+        .quiz {
+            margin-top: 30px;
+            background-color: #f3e0ff;
+            padding: 20px;
+            border-radius: 20px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 0 15px #c084fc;
+        }
+        .quiz h3 {
+            font-size: 22px;
+            color: #7d3cb5;
+        }
+        .quiz input[type="radio"] {
+            margin-right: 10px;
+        }
+        .quiz button {
+            background-color: #7d3cb5;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .quiz button:hover {
+            background-color: #5f2499;
+        }
+        @media (max-width: 768px) {
+            p { font-size: 16px; }
+            #contador { font-size: 20px; }
+            h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Meu Amor</h1>
+    <div class="decoracao">❤️✨💕🌸</div>
+
+    <p>Fiz esse site para que você tenha um cantinho nosso, pra lembrar das nossas fotos, das nossas datas e do quanto você é importante pra mim. Eu te amo muito, minha linda!</p>
+
+    <div id="contador"></div>
+
+    <div class="audio">
+        <audio controls autoplay loop>
+            <source src="Taylor_Swift_Daylight_Official_Audio_.mp3" type="audio/mpeg">
+            Seu navegador não suporta áudio.
+        </audio>
+    </div>
+
+    <div class="carrossel">
+        <div class="slides" id="slides">
+            <img src="Foto1.jpg" alt="Foto 1">
+            <img src="Foto2.jpg" alt="Foto 2">
+            <img src="Foto3.jpg" alt="Foto 3">
+            <img src="Foto4.jpg" alt="Foto 4">
+        </div>
+    </div>
+
+    <div class="carta">
+        <h2>Para você, minha linda:</h2>
+        <p>Desde o dia que te pedi em namoro, e soube que sempre foi você, minha vida ganhou um brilho diferente, uma paz que eu não sabia que existia. Cada momento ao seu lado é único e me faz querer viver tudo de novo, e de novo… com você.</p>
+        <p>Eu te amo mais do que palavras podem dizer, mais do que gestos podem mostrar, e mais do que qualquer distância pode separar. Você é minha pessoa favorita no mundo, meu motivo de sorrir, meu abrigo e minha melhor escolha!</p>
+        <p>Que esse cantinho te lembre sempre do quanto você é especial e amada. Pra sempre, nós!</p>
+        <div class="decoracao">❤️✨💕</div>
+    </div>
+
+    <div class="quiz">
+        <h3>Vamos ver o quanto você lembra dos nossos momentos!</h3>
+        <form id="quizForm">
+            <div>
+                <p>1. Quando foi o dia que te pedi em namoro?</p>
+                <input type="radio" name="pergunta1" value="01-01-2024"> 01/01/2024<br>
+                <input type="radio" name="pergunta1" value="14-05-2024"> 14/05/2024<br>
+                <input type="radio" name="pergunta1" value="22-03-2024"> 22/03/2024<br>
+            </div>
+            <div>
+                <p>2. Quem falou "eu te amo" primeiro?</p>
+                <input type="radio" name="pergunta2" value="Eu"> Eu<br>
+                <input type="radio" name="pergunta2" value="Você"> Você<br>
+            </div>
+            <div>
+                <p>3. Qual nossa música?</p>
+                <input type="radio" name="pergunta3" value="Taylor_Swift_Daylight"> Taylor Swift - Daylight<br>
+                <input type="radio" name="pergunta3" value="Ed_Sheeran_Perfect"> Ed Sheeran - Perfect<br>
+            </div>
+            <button type="submit">Ver Resultado</button>
+        </form>
+        <p id="respostaQuiz"></p>
+    </div>
+
+    <div class="coraçoes" id="coraçoes"></div>
+
+    <script>
+        function atualizaContador() {
+            const inicio = new Date('2024-05-14');
+            const hoje = new Date();
+            const diff = hoje - inicio;
+            const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+            document.getElementById('contador').innerText = `Estamos juntos há ${dias} dias, desde o dia que te pedi em namoro e soube que sempre foi você.`;
+        }
+        atualizaContador();
+
+        let index = 0;
+        function carrossel() {
+            const slides = document.getElementById('
